@@ -12,13 +12,18 @@ int main()
 
 
   NationState N1 = NationState("Canada");
+  Population CP1 = Population();
+  NationState N2 = NationState("Mexico");
+  Population MP1 = Population();
 
   SimState SimBase = SimState();
-  SimBase.addParticipant(&N1);
 
+  SimBase.addParticipant(&N1);
+  SimBase.Nations[0]->addPopulation(&CP1);
+  SimBase.addParticipant(&N2);
+  SimBase.Nations[1]->addPopulation(&MP1);
 
   while(1){
-    step_count++;
     SimBase.Update();
   }
 

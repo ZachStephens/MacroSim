@@ -8,15 +8,6 @@
 
 class NationState
 {
-public:
-
-    NationState();
-    NationState(const char*);
-    virtual ~NationState(){}
-    uint64_t getGDP(void){return GDP;}
-    void addPopulation(Population * P1){citizens.push_back(P1);}
-    void printName();
-    void Update();
 private:
     std::vector<Population *> citizens;
     int64_t GDP; //gross domestic product $$
@@ -26,6 +17,16 @@ private:
     int64_t investment; //$$ used to produce consumer goods
     void calculateGDP(){GDP= taxRevenue + netExports + finalGoodsConsumed + investment;}
     const char * Name;
+
+public:
+
+    NationState();
+    NationState(const char*);
+    virtual ~NationState(){}
+    uint64_t getGDP(void){return GDP;}
+    void addPopulation(Population * P1){citizens.push_back(P1);}
+    void printName();
+    void Update();
 
 };
 
